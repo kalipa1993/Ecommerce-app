@@ -5,7 +5,7 @@ import ItemList from "../ItemList";
 
 const productos =[
     {
-        "idLoja":001,
+        "idLoja":1,
         "departamento": "PERECIVEIS", 
         "categoria": "FRIOS",
         "subCategoria": "APRESUNTADO",
@@ -30,7 +30,7 @@ const productos =[
     },
 
     {
-        "idLoja":002,
+        "idLoja":2,
         "departamento": "PERECIVEIS", 
         "categoria": "FRIOS",
         "subCategoria": "APRESUNTADO",
@@ -56,31 +56,55 @@ const productos =[
 ];
    
 
-   export const ItemListContainer = ({ texto}) => {
-    
-     const [data,setData] = useState ([]);
+export const ItemListContainer = ({ texto }) => {
 
-     useEffect =(() => {
-      const getData = new Promise (resolve => {
-        setTimeout(() => {
-          resolve (productos);
-        },3000);
+	const [data, setData] = useState([]);
 
-       getData.then(res => setData(res));
 
-      });
-     }, [])
+	useEffect =
 
-    const onAdd =(quantity) => {
-        console.log(`compraste $ {qauntity} unidades`);
-    }
-   }
-    return(
-        <>
-       <Title/>
-       <ItemCount initial ={1} stock = {5} onAdd={onAdd}/>
-       <ItemList data ={data}/>
-       </>
-    );
+		(() => {
 
- export default ItemListContainer;
+			const getData = new Promise((resolve) => {
+
+				setTimeout(() => {
+
+					resolve(productos);
+
+				}, 3000);
+
+
+				getData.then((res) => setData(res));
+
+			});
+
+		},
+
+		[]);
+
+
+	const onAdd = (quantity) => {
+
+		console.log(`compraste $ {qauntity} unidades`);
+
+	};
+
+
+	return (
+
+		<>
+
+			<Title />
+
+			<ItemCount initial={1} stock={5} onAdd={onAdd} />
+
+			<ItemList data={data} />
+
+		</>
+
+	);
+
+};
+
+
+export default ItemListContainer;
