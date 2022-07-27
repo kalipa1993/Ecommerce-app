@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 
 import Cartwidget from "../Cartwidget";
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -10,20 +11,23 @@ const Navbar = () => {
     <div className="Navbar">
       <span className="nav-logo">Ecommerce</span>
       <div className={`nav-items ${isOpen && "open"}`}>
-        <a href="/ofertas">Ofertas</a>
-        <a href="/aseo">Aseo</a>
-        <a href="/abarrotes">Abarrotes</a>
-        <a href="/carrito">
+
+        <NavLink ClassName="nav_link"to="/ofertas">Ofertas</NavLink>
+        <NavLink ClassName="nav_link"to="/aseo">Aseo</NavLink>
+        <NavLink ClassName="nav_link"to="/abarrotes">Abarrotes</NavLink>
+        <NavLink ClassName="nav_link"to="/cart">Carrito</NavLink>
           <Cartwidget/>
-        </a>
+          <NavLink/>
+        
       </div>
-      <div
+      <div>
         className={`nav-toggle ${isOpen && "open"}`}
         onClick={() => setIsOpen(!isOpen)}
-      >
+      
         <div className="bar"></div>
       </div>
     </div>
+    
   );
 };
 
