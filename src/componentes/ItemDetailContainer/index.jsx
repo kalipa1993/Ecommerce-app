@@ -35,7 +35,7 @@ export const ItemDetailContainer =() => {
             }, 3000);
             });
        
-            getData.then(res => setData(res));
+            getData.then(res => setData(res.find(producto => producto.id === parseInt(detalleId))));
         },[])
      
 
