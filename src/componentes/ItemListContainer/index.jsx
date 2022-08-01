@@ -83,11 +83,6 @@ export const ItemListContainer = ({ texto }) => {
 		[]);
 
 
-	const onAdd = (quantity) => {
-
-		console.log(`compraste $ {qauntity} unidades`);
-
-	};
 
 
 	return (

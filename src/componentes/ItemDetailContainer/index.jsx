@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from "react";
 import ItemDetail from "../ItemDetail";
+import ItemCount from "../ItemCount";
+import "./ItemDetail.css";
 
 const producto = {
     "idLoja":1,
