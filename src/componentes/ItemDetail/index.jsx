@@ -8,7 +8,7 @@ export const ItemDetail = ({data}) => {
     const[goToCart,setGoToCart] = useState(false);
 
      const onAdd =(quantity) => {
-        setGoToCart(true);
+        setGoToCart(truegit);
         }
      }
 
@@ -29,6 +29,6 @@ export const ItemDetail = ({data}) => {
             </div>
         </div>
     );
-}
+
 
 export default ItemDetail;
